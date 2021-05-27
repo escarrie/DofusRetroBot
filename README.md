@@ -39,7 +39,7 @@ pip3 install pyautogui
 pip3 install jsons
 ```
 
-#### Installation
+## Installation
 
 ```commandline
 git clone https://github.com/escarrie/DofusRetroBot; cd DofusRetroBot\BotV2; py .\main.py
