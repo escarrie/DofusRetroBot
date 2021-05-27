@@ -2,7 +2,7 @@ from Position import *
 
 
 class Ressource:
-    def __init__(self, name: str, position: Position, rgb):
+    def __init__(self, name, position: Position, rgb):
         self.name = name
         self.position = position
         self.rgb = rgb
@@ -10,6 +10,18 @@ class Ressource:
     @property
     def get_rgb(self):
         return self.rgb
+
+    @property
+    def r(self):
+        return self.rgb[0]
+
+    @property
+    def g(self):
+        return self.rgb[1]
+
+    @property
+    def b(self):
+        return self.rgb[2]
 
     @property
     def get_position(self):

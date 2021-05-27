@@ -4,7 +4,7 @@ from Door import *
 
 
 class Map:
-    def __init__(self, position: Position, ressources, doors):
+    def __init__(self, position: Position, ressources: [], doors: []):
         self.position = position
         self.ressources = ressources
         self.doors = doors
@@ -20,6 +20,14 @@ class Map:
     @property
     def get_doors(self):
         return self.doors
+
+    @property
+    def add_ressources(self, ressource: Ressource):
+        self.ressources.append(ressource)
+
+    @property
+    def add_door(self, door: Door):
+        self.doors.append(door)
 
     @property
     def print_str(self):
