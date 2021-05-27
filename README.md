@@ -21,6 +21,7 @@ This project is a bot farming on the game Dofus Retro running on Windows
 
 #### To be added
 - Farming
+- Fight
 
 ## Requierements
 
