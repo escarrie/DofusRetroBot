@@ -4,7 +4,7 @@
 
 | Author | Esteban Carrière |
 | ------ | ------ |
-| LinkedIn | [here](https://www.linkedin.com/in/esteban-carri%C3%A8re-0655a8191/){:target="_blank"} |
+| LinkedIn | [here](https://www.linkedin.com/in/esteban-carri%C3%A8re-0655a8191/) |
 | Actual project | [here](BotV2)|
 | Update | **27/05/2021** |
 
