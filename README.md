@@ -32,7 +32,11 @@ https://www.python.org/downloads/
 ```
 - library pyautogui
 ```commandline
-py -3.8 -m pip install pyautogui
+pip3 install pyautogui
+```
+- library json
+```commandline
+pip3 install jsons
 ```
 
 #### Installation
