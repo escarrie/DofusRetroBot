@@ -9,10 +9,6 @@
                 620,
                 403
             ],
-            "droite": [
-                1856,
-                892
-            ],
             "gauche": [
                 69,
                 1100
@@ -20,7 +16,7 @@
         },
         "ressources": [
             [
-                "Nombre de ressource:",
+                "Nombre de ressources",
                 6
             ],
             [
@@ -93,13 +89,13 @@
                 "droite",
                 "gauche"
             ],
-            "haut": [
-                1169,
-                408
-            ],
             "bas": [
                 616,
                 1447
+            ],
+            "haut": [
+                1169,
+                408
             ],
             "droite": [
                 1857,
@@ -108,12 +104,11 @@
             "gauche": [
                 70,
                 889
-            ],
-            "commentaire": "Ajout de ressource au level up disponible"
+            ]
         },
         "ressources": [
             [
-                "Nombre de ressource:",
+                "Nombre de ressources",
                 8
             ],
             [
@@ -213,10 +208,6 @@
                 1852,
                 822
             ],
-            "haut": [
-                753,
-                408
-            ],
             "gauche": [
                 72,
                 1172
@@ -224,7 +215,7 @@
         },
         "ressources": [
             [
-                "Nombre de ressource:",
+                "Nombre de ressources",
                 14
             ],
             [
@@ -381,7 +372,7 @@
         },
         "ressources": [
             [
-                "Nombre de ressource:",
+                "Nombre de ressources",
                 10
             ],
             [
@@ -499,20 +490,12 @@
             "gauche": [
                 74,
                 822
-            ],
-            "haut": [
-                1035,
-                406
-            ],
-            "droite": [
-                1856,
-                1102
             ]
         },
         "ressources": [
             [
-                "Nombre de ressource:",
-                14
+                "Nombre de ressources",
+                13
             ],
             [
                 "Chataigne",
@@ -652,22 +635,18 @@
                 "droite",
                 "haut"
             ],
-            "gauche": [
-                80,
-                892
+            "droite": [
+                1849,
+                1106
             ],
             "haut": [
                 1024,
                 408
-            ],
-            "droite": [
-                1849,
-                1106
             ]
         },
         "ressources": [
             [
-                "Nombre de ressource:",
+                "Nombre de ressources",
                 9
             ],
             [
@@ -769,27 +748,23 @@
                 "bas",
                 "haut"
             ],
+            "droite": [
+                1899,
+                891
+            ],
             "bas": [
                 1034,
                 1449
             ],
-            "gauche": [
-                69,
-                960
-            ],
             "haut": [
                 894,
                 403
-            ],
-            "droite": [
-                1899,
-                891
             ]
         },
         "ressources": [
             [
-                "Nombre de ressource:",
-                9
+                "Nombre de ressources",
+                12
             ],
             [
                 "Chataigne",
@@ -919,27 +894,19 @@
                 "droite",
                 "bas"
             ],
-            "bas": [
-                896,
-                1449
-            ],
-            "gauche": [
-                64,
-                1104
-            ],
-            "haut": [
-                1302,
-                405
-            ],
             "droite": [
                 1851,
                 1172
+            ],
+            "bas": [
+                896,
+                1449
             ]
         },
         "ressources": [
             [
-                "Nombre de ressource:",
-                14
+                "Nombre de ressources",
+                8
             ],
             [
                 "Chataigne",

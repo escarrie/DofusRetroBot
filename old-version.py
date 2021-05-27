@@ -5,6 +5,7 @@ import keyboard
 import random
 import _thread
 import winsound
+import json
 
 # Variable d'environnement
 process =   {
@@ -397,6 +398,7 @@ def checkCombat():
         print('Combat starting')
 
 
-_thread.start_new_thread(main, ('',))
-_thread.start_new_thread(checkLevelup, (process['level'],))
-verifKeyStopPress('')
+#_thread.start_new_thread(main, ('',))
+#_thread.start_new_thread(checkLevelup, (process['level'],))
+#verifKeyStopPress('')
+print(json.dumps(map, indent=4))

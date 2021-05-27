@@ -220,8 +220,7 @@ def add_process(maps):
                         sys.stdout.write("\rContinue dans {} seconde(s) ".format(10 - i))
                         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
-        var = [t.print_str for t in maps]
-        var = '0'
-        int(var)
+        [t.print_str for t in maps]
         if input("Aller vers le changement de mode? [O] Oui - [N] Non\t").upper() == 'O':
             break
+    return maps
