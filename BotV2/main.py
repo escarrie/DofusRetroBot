@@ -83,7 +83,7 @@ def main(g_stopped):
         elif s == '1':
             os.system('cls' if os.name == 'nt' else 'clear')
             print("---- FARMING ----")
-            farming_process()
+            farming_process(maps)
             input()
         os.system('cls' if os.name == 'nt' else 'clear')
         if input("Quitter le programme? [O] Oui - [N] Non\t").upper() == 'O':

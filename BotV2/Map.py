@@ -31,9 +31,9 @@ class Map:
 
     @property
     def print_str(self):
-        print("----\t{}\t----".format(self.position.to_str))
-        print(self.position.to_str, "Porte:")
+        print("-------- MAP: {} --------".format(self.position.to_str))
+        print("\n", self.position.to_str, "Porte:")
         [print(d.to_str) for d in self.doors]
-        print(self.position.to_str, "Ressources:")
+        print("\n", self.position.to_str, "Ressources: {}".format(len(self.ressources)))
         [print(r.to_str) for r in self.ressources]
         print('\n\n\n')
