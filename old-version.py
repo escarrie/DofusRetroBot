@@ -234,8 +234,10 @@ def printStats():
     print('Niveau obtenu: ' + str(stats['levelup']))
     print('Finish chause: ' + stats['finishCause'])
 
+
 def sleep(secondes):
     time.sleep(secondes)
+
 
 def RepresentsInt(s):
     try:
@@ -243,6 +245,7 @@ def RepresentsInt(s):
         return True
     except ValueError:
         return False
+
 
 def getPositionStart():
     flag = False
@@ -256,6 +259,7 @@ def getPositionStart():
         print('Erreur dans la map suivez l\'exemple!')
         exit()
 
+
 def verifKeyStopPress(nothing):
     while True:
         if (keyboard.is_pressed('q') or (keyboard.is_pressed('ctrl') and keyboard.is_pressed('c'))):
@@ -266,9 +270,11 @@ def verifKeyStopPress(nothing):
             exit()
     return False
 
+
 def getPicture():
     pic = pyautogui.screenshot(region=(screen['start'][0], screen['start'][1], screen['append'][0], screen['append'][1]))
     return pic
+
 
 def verifPods():
     pic = pyautogui.screenshot(region=(screen['start'][0], screen['start'][1], screen['end'][0], screen['end'][1]))
@@ -293,6 +299,7 @@ def verifPods():
     else:
         return True
 
+
 def checkChangeMapFinish():
     print('Changement de map en cours')
     pic = getPicture()
@@ -310,6 +317,7 @@ def checkChangeMapFinish():
         if (br != nr or bg != ng or bb != nb):
             break
     print('Map chargée')
+
 
 def changeMap(porte):
     i = random.randint(0, len(porte['disponible']) - 1)
@@ -331,9 +339,11 @@ def changeMap(porte):
     print('Nombre de ressources à récolté: ' + str(map[process['position'][0] + ',' + process['position'][1]]['ressources'][0][1]))
     stats['changeMap'] = stats['changeMap'] + 1
 
+
 def collectMap(carte):
     collectRessources(carte['ressources'])
     changeMap(carte['porte'])
+
 
 def click(x, y):
     pyautogui.moveTo(x, y)
@@ -341,6 +351,7 @@ def click(x, y):
     sleep(0.2)
     stats['click'] = stats['click'] + 1
     return True
+
 
 def collectRessources(ressources):
     i = 1
@@ -359,6 +370,7 @@ def collectRessources(ressources):
             i = 1
         i = i + 1
 
+
 def checkRessourceCollected(ressource):
     while (True and not keyboard.is_pressed('f9')):
         pic = getPicture()
@@ -367,6 +379,7 @@ def checkRessourceCollected(ressource):
             stats['ressourceCollecter'] = stats['ressourceCollecter'] + 1
             break
     verifPods()
+
 
 def checkLevelup(level):
     while True:
@@ -378,6 +391,7 @@ def checkLevelup(level):
             print('-----    LEVEL UP: ' + str(process['level']) + '    -----')
         sleep(0.5)
 
+
 def main(nothing):
     getPositionStart()
     process['level'] = int(input('Niveau de votre métier de bucheron? '))
@@ -386,6 +400,7 @@ def main(nothing):
     print('Nombre de ressources à récolté: ' + str(map[process['position'][0] + ',' + process['position'][1]]['ressources'][0][1]))
     while (verifPods()):
         collectMap(map[process['position'][0] + ',' + process['position'][1]])
+
 
 def checkCombat():
     sleep(2)
