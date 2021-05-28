@@ -3,6 +3,7 @@ from pyautogui import *
 from Map import *
 from Position import *
 from Ressource import *
+from Farming import *
 from Door import *
 import pyautogui
 import time
@@ -82,6 +83,8 @@ def main(g_stopped):
         elif s == '1':
             os.system('cls' if os.name == 'nt' else 'clear')
             print("---- FARMING ----")
+            farming_process()
+            input()
         os.system('cls' if os.name == 'nt' else 'clear')
         if input("Quitter le programme? [O] Oui - [N] Non\t").upper() == 'O':
             g_stopped = True

@@ -32,3 +32,14 @@ def click(pos: Position):
     pyautogui.moveTo(pos.x, pos.y)
     pyautogui.click()
     sleep(t)
+
+
+def getPositionStarting():
+    temp = [int(i) for i in input('Entrée votre position ( ex: "0.-24" ):\t').split('.')]
+    temp = Position(temp[0], temp[1])
+    return temp
+
+
+def farming_process():
+    current_pos_player = getPositionStarting()
+    print(current_pos_player.to_str)
