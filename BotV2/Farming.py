@@ -142,12 +142,12 @@ def farming_process(maps):
             collectMaps(current_map, screen)
             come_from, new_pos = changeMap(current_map, come_from, screen)
             # FIND NEW MAP
-            for c_map in maps:
-                if c_map.position.to_str == new_pos.to_str:
-                    c_map.print_str
-                    current_map = checkMapExist(maps, c_map.position)
-                    break
-            current_map.print_str
+            current_map = checkMapExist(maps, new_pos)
+            if not current_map:
+                print("La map n'existe pas")
+                break
+            else:
+                current_map.print_str
     else:
         c = input("Map non trouver: {}\nVoulez vous lister toutes les maps? [O] Oui - [N] Non\t".format(current_pos_player.to_str)).upper()
         if c == 'O':
