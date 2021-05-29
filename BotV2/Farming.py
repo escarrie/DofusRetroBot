@@ -140,7 +140,7 @@ def farming_process(maps):
         # FARMING
         come_from = 'none'
         while True:
-            # collectMaps(current_map, screen)
+            collectMaps(current_map, screen)
             come_from, new_pos = changeMap(current_map, come_from, screen)
             # FIND NEW MAP
             m_temp = checkMapExist(maps, new_pos)
