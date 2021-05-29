@@ -12,7 +12,7 @@ import random
 import _thread
 import json
 
-g_stopped = False
+global g_stopped
 
 
 def init():
@@ -62,7 +62,7 @@ def save_maps(maps):
     f.close()
 
 
-def main(g_stopped):
+def main(void):
     maps = init()
     temp = []
     for mapi in maps:
@@ -95,5 +95,6 @@ def main(g_stopped):
             break
 
 
-_thread.start_new_thread(main, (g_stopped,))
+g_stopped = False
+_thread.start_new_thread(main, ('',))
 verif_stop()

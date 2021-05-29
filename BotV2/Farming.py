@@ -1,3 +1,4 @@
+from threading import Thread
 from Adding import *
 from pyautogui import *
 from Map import *
@@ -55,11 +56,11 @@ def checkMapExist(maps, pos: Position):
 
 def verifPods(screen: Screen):
     pic = getPicture(screen)
-    r, g, b = pic.getpixel((screen.x_pods, screen.y_pods))
+    r, g, b = pic.getpixel((screen.x_pods - screen.x_start, screen.y_pods - screen.y_start))
     if not (r in range(75, 85) or g in range(70, 80) or b in range(55, 65)):
         # VERIF LEVEL
         pic = getPicture(screen)
-        r, g, b = pic.getpixel((screen.x_level, screen.y_level))
+        r, g, b = pic.getpixel((screen.x_level - screen.x_start, screen.y_level - screen.y_start))
         if r == 255 and g == 97 and b == 0:
             pyautogui.press('enter')
             print("****************************")
@@ -69,12 +70,13 @@ def verifPods(screen: Screen):
             print("****************************")
             print("\tINVENTAIRE PLEIN")
             print("****************************")
-            frequency = 1500  # Set Frequency To 2500 Hertz
+            frequency = 500  # Set Frequency To 1500 Hertz
             duration = 500  # Set Duration To 1000 ms == 1 second
             for i in range(1, 5):
                 winsound.Beep(frequency, duration)
                 sleep(random.random())
-            exit()
+            global g_stopped
+            g_stopped = True
 
 
 def checkChangeMap(screen: Screen):
