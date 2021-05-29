@@ -75,8 +75,7 @@ def verifPods(screen: Screen):
             for i in range(1, 5):
                 winsound.Beep(frequency, duration)
                 sleep(random.random())
-            global g_stopped
-            g_stopped = True
+            exit()
 
 
 def checkChangeMap(screen: Screen):
@@ -126,7 +125,7 @@ def collectRessrouces(current_map: Map, screen: Screen):
         if checkRessources(current_map.ressources[i], screen):
             # COLLECT
             click(current_map.ressources[i].position)
-            secPosition = Position(current_map.ressources[i].position.x + 50, current_map.ressources[i].position.y + 75)
+            secPosition = Position(current_map.ressources[i].position.x + 50, current_map.ressources[i].position.y + 60)
             click(secPosition)
             # CHECK COLLECTED
             checkRessourceCollected(current_map.ressources[i], screen)
@@ -171,6 +170,7 @@ def farming_process(maps):
         # FARMING
         come_from = 'none'
         while True:
+            verifPods(screen)
             collectMaps(current_map, screen)
             come_from, new_pos = changeMap(current_map, come_from, screen)
             # FIND NEW MAP
