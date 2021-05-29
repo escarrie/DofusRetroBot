@@ -10,6 +10,7 @@ import random
 import time
 import keyboard
 import random
+import winsound
 import _thread
 
 
@@ -50,6 +51,30 @@ def checkMapExist(maps, pos: Position):
     if flag:
         return to_return
     return to_return
+
+
+def verifPods(screen: Screen):
+    pic = getPicture(screen)
+    r, g, b = pic.getpixel((screen.x_pods, screen.y_pods))
+    if not (r in range(75, 85) or g in range(70, 80) or b in range(55, 65)):
+        # VERIF LEVEL
+        pic = getPicture(screen)
+        r, g, b = pic.getpixel((screen.x_level, screen.y_level))
+        if r == 255 and g == 97 and b == 0:
+            pyautogui.press('enter')
+            print("****************************")
+            print("\tLEVELUP")
+            print("****************************")
+        else:
+            print("****************************")
+            print("\tINVENTAIRE PLEIN")
+            print("****************************")
+            frequency = 1500  # Set Frequency To 2500 Hertz
+            duration = 500  # Set Duration To 1000 ms == 1 second
+            for i in range(1, 5):
+                winsound.Beep(frequency, duration)
+                sleep(random.random())
+            exit()
 
 
 def checkChangeMap(screen: Screen):
@@ -94,7 +119,8 @@ def checkRessources(res: Ressource, screen: Screen):
 
 
 def collectRessrouces(current_map: Map, screen: Screen):
-    for i in range(len(current_map.ressources)):
+    i = 0
+    while i < len(current_map.ressources):
         if checkRessources(current_map.ressources[i], screen):
             # COLLECT
             click(current_map.ressources[i].position)
@@ -102,7 +128,10 @@ def collectRessrouces(current_map: Map, screen: Screen):
             click(secPosition)
             # CHECK COLLECTED
             checkRessourceCollected(current_map.ressources[i], screen)
+            # CHECK PODS
+            verifPods(screen)
             i = 0
+        i += 1
 
 
 def changeMap(current_map: Map, come_from, screen: Screen):
