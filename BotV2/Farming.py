@@ -110,7 +110,10 @@ def changeMap(current_map: Map, come_from, screen: Screen):
     t_door = current_map.get_random_door(come_from, current_map.doors)
     # CLICK ON DOOR
     click(t_door.position)
-    new_pos = current_map.position
+    # CHECK MAP CHANGE
+    checkChangeMap(screen)
+    # NEW POS
+    new_pos = Position(current_map.position.x, current_map.position.y)
     if t_door.direction == 'haut':
         new_pos.up
     elif t_door.direction == 'bas':
@@ -119,8 +122,6 @@ def changeMap(current_map: Map, come_from, screen: Screen):
         new_pos.right
     elif t_door.direction == 'gauche':
         new_pos.left
-    # CHECK MAP CHANGE
-    checkChangeMap(screen)
     return t_door.direction, new_pos
 
 
@@ -139,21 +140,22 @@ def farming_process(maps):
         # FARMING
         come_from = 'none'
         while True:
-            collectMaps(current_map, screen)
+            # collectMaps(current_map, screen)
             come_from, new_pos = changeMap(current_map, come_from, screen)
             # FIND NEW MAP
-            current_map = checkMapExist(maps, new_pos)
-            if not current_map:
+            m_temp = checkMapExist(maps, new_pos)
+            if not m_temp:
                 print("La map n'existe pas")
                 break
             else:
-                current_map.print_str
+                os.system('cls' if os.name == 'nt' else 'clear')
+                m_temp.print_str
+                current_map = m_temp
     else:
         c = input("Map non trouver: {}\nVoulez vous lister toutes les maps? [O] Oui - [N] Non\t".format(current_pos_player.to_str)).upper()
         if c == 'O':
                 if len(maps) % 2 == 0:
-                    [print("[{}] {}\t-\t[{}] {}".format(i + 1, maps[i].position.to_str, i + 2, maps[i + 1].position.to_str)) for
-                     i in range(0, len(maps), 2)]
+                    [print("[{}] {}\t-\t[{}] {}".format(i + 1, maps[i].position.to_str, i + 2, maps[i + 1].position.to_str)) for i in range(0, len(maps), 2)]
                 else:
                     [print("[{}] {}\t-\t[{}] {}".format(i + 1, maps[i].position.to_str, i + 2, maps[i + 1].position.to_str)) for
                      i in range(0, len(maps) - 1, 2)]
