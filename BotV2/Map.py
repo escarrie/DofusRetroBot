@@ -1,6 +1,7 @@
 from Ressource import *
 from Position import *
 from Door import *
+import random
 
 
 class Map:
@@ -28,6 +29,27 @@ class Map:
     @property
     def add_door(self, door: Door):
         self.doors.append(door)
+
+    @classmethod
+    def get_random_door(cls, come_from, doors):
+        while True:
+            flag = True
+            i = random.randint(0, len(doors) - 1)
+            door_return = doors[i]
+            # bas - haut
+            if door_return.direction == 'bas' and come_from == 'haut':
+                flag = False
+            # haut - bas
+            if door_return.direction == 'haut' and come_from == 'bas':
+                flag = False
+            # droite - gauche
+            if door_return.direction == 'droite' and come_from == 'gauche':
+                flag = False
+            # gauche - droite
+            if door_return.direction == 'gauche' and come_from == 'droite':
+                flag = False
+            if flag:
+                return door_return
 
     @property
     def print_str(self):

@@ -22,6 +22,10 @@ def init():
     return s
 
 
+def resetData():
+    pass
+
+
 def starting():
     return input("Voulez vous farmer ou ajouter des ressources?\n[1] - Farmer\n[2] - Ajouter des ressources\n1 ou 2: ")
 

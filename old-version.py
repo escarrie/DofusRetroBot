@@ -309,7 +309,7 @@ def checkChangeMapFinish():
         nr, ng, nb = pic.getpixel((screen['center'][0], screen['center'][1]))
         if (br != nr or bg != ng or bb != nb):
             break
-    bn = bg = bb = 0
+    br = bg = bb = 0
     print('Chargement en cours')
     while (True and not keyboard.is_pressed('right')):
         pic = getPicture()

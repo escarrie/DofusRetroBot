@@ -22,3 +22,7 @@ class Screen:
         self.y_append   = self.y_end - self.y_start
         self.x_level    = levelup[0]
         self.y_level    = levelup[1]
+
+    @property
+    def to_str(self):
+        return self
