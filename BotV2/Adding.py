@@ -33,30 +33,44 @@ def add_process(maps):
                         if c == 'A':
                             a = input("voulez vous ajouter une porte [P] ou une ressource [R]?\t").upper()
                             if a == 'P':
-                                os.system('cls' if os.name == 'nt' else 'clear')
-                                print("Liste des portes:")
-                                [print("[{}] - {}".format(i + 1, this.doors[i].to_str)) for i in range(len(this.doors))]
-                                dir = int(input("\n\nQuel direction?\n[1] Haut\n[2] Bas\n[3] Gauche\n[4] Droite\n1 ou .. 4\t"))
-                                flag = True
-                                if dir == 1:
-                                    dir = "haut"
-                                elif dir == 2:
-                                    dir = "bas"
-                                elif dir == 3:
-                                    dir = "gauche"
-                                elif dir == 4:
-                                    dir = "droite"
-                                else:
-                                    flag = False
-                                if flag:
-                                    pos = input("Quel est la position? [1684 180]\t").split()
-                                    pos = Position(pos[0], pos[1])
-                                    door = Door(dir, pos)
-                                    this.doors.append(door)
+                                while True:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    print("Liste des portes:")
                                     [print("[{}] - {}".format(i + 1, this.doors[i].to_str)) for i in range(len(this.doors))]
+                                    dir = int(input("\n\nQuel direction?\n[1] Haut\n[2] Bas\n[3] Gauche\n[4] Droite\n1 ou .. 4\t"))
+                                    flag = True
+                                    if dir == 1:
+                                        dir = "haut"
+                                    elif dir == 2:
+                                        dir = "bas"
+                                    elif dir == 3:
+                                        dir = "gauche"
+                                    elif dir == 4:
+                                        dir = "droite"
+                                    else:
+                                        flag = False
+                                    if flag:
+                                        pos = input("Quel est la position? [1684 180]\t").split()
+                                        pos = Position(pos[0], pos[1])
+                                        door = Door(dir, pos)
+                                        this.doors.append(door)
+                                        [print("[{}] - {}".format(i + 1, this.doors[i].to_str)) for i in range(len(this.doors))]
+                                    if input("Voulez vous continuer d'ajouter des portes? [O] Oui - [N] Non\t").upper() == 'N':
+                                        break
                             elif a == 'R':
-                                print("Ressource")
-                                [print("[{}] - {}".format(i + 1, this.ressources[i].to_str)) for i in range(len(this.ressources))]
+                                while True:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    print("Ressource")
+                                    [print("[{}] - {}".format(i + 1, this.ressources[i].to_str)) for i in range(len(this.ressources))]
+                                    r_add = input("Quel ressources voulez-vous ajouter? ex: Frene x.y r.g.b\n").split()
+                                    r_pos = [int(temp) for temp in r_add[1].split('.')]
+                                    r_pos = Position(r_pos[0], r_pos[1])
+                                    r_rgb = [int(temp) for temp in r_add[2].split('.')]
+                                    r_add = r_add[0]
+                                    r_add = Ressource(r_add, r_pos, r_rgb)
+                                    this.ressources.append(r_add)
+                                    if input("Voulez vous continuer d'ajouter des ressources? [O] Oui - [N] Non\t").upper() == 'N':
+                                        break
                         elif c == 'M':
                             print('MODIFIER')
                             m = input("Voulez vous modifier une porte [P] ou une ressource [R]?\t").upper()

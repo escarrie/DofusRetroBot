@@ -1045,7 +1045,7 @@
         "ressources": [
             [
                 "Nombre de ressources",
-                8
+                10
             ],
             [
                 "Chataigner",
@@ -1121,6 +1121,26 @@
                 "Chataigner",
                 1365,
                 477,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                1708,
+                512,
+                [
+                    204,
+                    124,
+                    40
+                ]
+            ],
+            [
+                "Chataignier",
+                1780,
+                1174,
                 [
                     206,
                     121,
