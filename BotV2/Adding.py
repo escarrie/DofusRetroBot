@@ -144,7 +144,7 @@ def add_process(maps):
                                     [print("[{}] {}\t-\t[{}] {}".format(i + 1, maps[i].position.to_str, i + 2, maps[i + 1].position.to_str)) for i in range(0, len(maps) - 1, 2)]
                                     print("[{}] {}".format(len(maps), maps[len(maps) - 1].position.to_str))
                                 for i in range(10):
-                                    sys.stdout.write("\rContinue dans {} seconde(s) ".format(10 - i))
+                                    sys.stdout.write("\rContinue dans {} seconde(s) ".format(5 - i))
                                     time.sleep(1)
                                 sys.stdout.write("\rContinue dans 0 seconde(s) ")
                                 time.sleep(1)
