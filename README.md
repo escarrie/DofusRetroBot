@@ -6,7 +6,7 @@
 | ------ | ------ |
 | LinkedIn | [here](https://www.linkedin.com/in/esteban-carri%C3%A8re-0655a8191/) |
 | Actual project | [here](BotV2)|
-| Update | **29/05/2021** |
+| Update | **31/05/2021** |
 
 ## Description
 
