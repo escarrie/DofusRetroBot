@@ -50,7 +50,7 @@ def add_process(maps):
                                     else:
                                         flag = False
                                     if flag:
-                                        pos = input("Quel est la position? [1684.180]\t").split('.')
+                                        pos = [int(t_pos_d) for t_pos_d in input("Quel est la position? [1684.180]\t").split('.')]
                                         pos = Position(pos[0], pos[1])
                                         door = Door(dir, pos)
                                         this.doors.append(door)
