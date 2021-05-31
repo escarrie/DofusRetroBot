@@ -23,7 +23,6 @@ This project is a bot farming on the game Dofus Retro running on Windows
 - Stop from another thread
 
 #### To be added
-- Adding ressources where map exist
 - verif level
 - verif fight
 - Fight
