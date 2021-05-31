@@ -13,6 +13,7 @@ import keyboard
 import random
 import winsound
 import _thread
+import os
 
 
 def getPicture(screen: Screen):
@@ -75,7 +76,7 @@ def verifPods(screen: Screen):
             for i in range(1, 5):
                 winsound.Beep(frequency, duration)
                 sleep(random.random())
-            exit()
+            os._exit(1)
 
 
 def checkChangeMap(screen: Screen):

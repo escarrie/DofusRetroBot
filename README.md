@@ -19,9 +19,11 @@ This project is a bot farming on the game Dofus Retro running on Windows
 - Recovering resources from a json file
 - Save adding resources
 - Farming
+- verif pods
+- Stop from another thread
 
 #### To be added
-- verif pods
+- Adding ressources where map exist
 - verif level
 - verif fight
 - Fight
