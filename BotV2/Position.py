@@ -5,11 +5,11 @@ class Position:
 
     @property
     def get_x(self):
-        return self.x
+        return int(self.x)
 
     @property
     def get_y(self):
-        return self.y
+        return int(self.y)
 
     @property
     def right(self):

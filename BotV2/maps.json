@@ -1035,11 +1035,16 @@
     "1.30": {
         "porte": {
             "disponible": [
-                "gauche"
+                "gauche",
+                "droite"
             ],
             "gauche": [
                 17,
                 1100
+            ],
+            "droite": [
+                "1903",
+                "683"
             ]
         },
         "ressources": [
@@ -1141,6 +1146,83 @@
                 "Chataignier",
                 1780,
                 1174,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ]
+        ]
+    },
+    "2.30": {
+        "porte": {
+            "disponible": [
+                "gauche"
+            ],
+            "gauche": [
+                18,
+                612
+            ]
+        },
+        "ressources": [
+            [
+                "Nombre de ressources",
+                6
+            ],
+            [
+                "Chataignier",
+                267,
+                1316,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                888,
+                512,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                477,
+                791,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                1435,
+                792,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                1575,
+                791,
+                [
+                    206,
+                    121,
+                    36
+                ]
+            ],
+            [
+                "Chataignier",
+                1712,
+                652,
                 [
                     206,
                     121,

@@ -5,14 +5,13 @@ from Position import *
 from Ressource import *
 from Farming import *
 from Door import *
+import os
 import pyautogui
 import time
 import keyboard
 import random
 import _thread
 import json
-
-global g_stopped
 
 
 def init():
@@ -33,8 +32,6 @@ def starting():
 def verif_stop():
     while True:
         if keyboard.is_pressed('ctrl') and keyboard.is_pressed('c'):
-            break
-        if g_stopped:
             break
 
 
@@ -91,10 +88,8 @@ def main(void):
             input()
         os.system('cls' if os.name == 'nt' else 'clear')
         if input("Quitter le programme? [O] Oui - [N] Non\t").upper() == 'O':
-            g_stopped = True
-            break
+            os._exit(1)
 
 
-g_stopped = False
 _thread.start_new_thread(main, ('',))
 verif_stop()

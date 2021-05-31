@@ -69,6 +69,9 @@ def add_process(maps):
                                     r_add = r_add[0]
                                     r_add = Ressource(r_add, r_pos, r_rgb)
                                     this.ressources.append(r_add)
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    [print("[{}] - {}".format(i + 1, this.ressources[i].to_str)) for i in
+                                     range(len(this.ressources))]
                                     if input("Voulez vous continuer d'ajouter des ressources? [O] Oui - [N] Non\t").upper() == 'N':
                                         break
                         elif c == 'M':
@@ -99,7 +102,7 @@ def add_process(maps):
                                     pos_t = [int(i) for i in res_t[1].split('.')]
                                     pos_t = Position(pos_t[0], pos_t[1])
                                     temp = Ressource(res_t[0], pos_t, [r, g, b])
-                                    this.ressources[res] = temp
+                                    this.ressources[res - 1] = temp
                                     [print("[{}] - {}".format(i + 1, this.ressources[i].to_str)) for i in range(len(this.ressources))]
                                 else:
                                     print("Ressource non trouver")
@@ -223,18 +226,18 @@ def add_process(maps):
                             t_pos = Position(x, y)
                             t_res = Ressource(t_res[0], t_pos, t_rgb)
                             ressources.append(t_res)
-                            [print(i.to_str) for i in ressources]
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            [print("[{}] {}".format(i + 1, ressources[i].to_str)) for i in range(len(ressources))]
                         if input("Continuer d'ajouter des ressources? [O] Oui - [N] Non\t").upper() == 'N':
                             break
                     if not doors and ressources:
                         flag_process = False
                     if flag_process:
                         maps.append(Map(pos, ressources, doors))
-                    for i in range(10):
+                    for i in range(5):
                         sys.stdout.write("\rContinue dans {} seconde(s) ".format(10 - i))
                         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
-        [t.print_str for t in maps]
         if input("Aller vers le changement de mode? [O] Oui - [N] Non\t").upper() == 'O':
             break
     return maps

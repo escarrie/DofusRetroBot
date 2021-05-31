@@ -31,7 +31,7 @@ def click(pos: Position):
         t -= 0.5
     if t < 0.2:
         t += 0.2
-    pyautogui.moveTo(pos.x, pos.y)
+    pyautogui.moveTo(pos.get_x, pos.get_y)
     pyautogui.click()
     sleep(t)
 
@@ -68,9 +68,9 @@ def verifPods(screen: Screen):
             print("\tLEVELUP")
             print("****************************")
         else:
-            print("****************************")
+            print("********************************")
             print("\tINVENTAIRE PLEIN")
-            print("****************************")
+            print("********************************")
             frequency = 500  # Set Frequency To 1500 Hertz
             duration = 500  # Set Duration To 1000 ms == 1 second
             for i in range(1, 5):
