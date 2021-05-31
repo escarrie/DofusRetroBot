@@ -1158,7 +1158,8 @@
         "porte": {
             "disponible": [
                 "gauche",
-                "bas"
+                "bas",
+                "droite"
             ],
             "gauche": [
                 18,
@@ -1167,6 +1168,10 @@
             "bas": [
                 "894",
                 "1473"
+            ],
+            "droite": [
+                "1898",
+                "965"
             ]
         },
         "ressources": [
@@ -1242,8 +1247,8 @@
                 "haut"
             ],
             "haut": [
-                892,
-                375
+                841,
+                406
             ]
         },
         "ressources": [
