@@ -84,8 +84,9 @@ def add_process(maps):
                                 dir = int(input("\nQuel porte voulez vous modifier? 1 .. {}\t".format(len(this.doors))))
                                 if dir in range(1, len(this.doors) + 1):
                                     print("Modification de la porte: ", this.doors[dir - 1].to_str)
-                                    door_t = input("Quel modification? [haut/bas/gauche/droite 1000 10]\t").split()
-                                    this.doors[dir - 1].position = Position(int(door_t[1]), int(door_t[2]))
+                                    door_t = input("Quel modification? [haut/bas/gauche/droite 1000.10]\t").split()
+                                    t_pos_d = [int(temp) for temp in door_t[1].split('.')]
+                                    this.doors[dir - 1].position = Position(t_pos_d[0], t_pos_d[1])
                                     this.doors[dir - 1].direction = door_t[0]
                                     [print("[{}] - {}".format(i + 1, this.doors[i].to_str)) for i in range(len(this.doors))]
                                 else:
@@ -143,7 +144,7 @@ def add_process(maps):
                                 else:
                                     [print("[{}] {}\t-\t[{}] {}".format(i + 1, maps[i].position.to_str, i + 2, maps[i + 1].position.to_str)) for i in range(0, len(maps) - 1, 2)]
                                     print("[{}] {}".format(len(maps), maps[len(maps) - 1].position.to_str))
-                                for i in range(10):
+                                for i in range(5):
                                     sys.stdout.write("\rContinue dans {} seconde(s) ".format(5 - i))
                                     time.sleep(1)
                                 sys.stdout.write("\rContinue dans 0 seconde(s) ")
@@ -235,7 +236,7 @@ def add_process(maps):
                     if flag_process:
                         maps.append(Map(pos, ressources, doors))
                     for i in range(5):
-                        sys.stdout.write("\rContinue dans {} seconde(s) ".format(10 - i))
+                        sys.stdout.write("\rContinue dans {} seconde(s) ".format(5 - i))
                         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
         if input("Aller vers le changement de mode? [O] Oui - [N] Non\t").upper() == 'O':
