@@ -21,9 +21,9 @@ This project is a bot farming on the game Dofus Retro running on Windows
 - Farming
 - verif pods
 - Stop from another thread
+- verif level
 
 #### To be added
-- verif level
 - verif fight
 - Fight
 - Key
