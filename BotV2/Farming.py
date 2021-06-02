@@ -21,6 +21,15 @@ def getPicture(screen: Screen):
     return pic
 
 
+def verifLevelUp(screen: Screen):
+    while True:
+        pic = getPicture(screen)
+        r, g, b = pic.getpixel((screen.x_level - screen.x_start, screen.y_level - screen.y_level))
+        if r == 255 and g == 97 and b == 0:
+            pyautogui.press('enter')
+        sleep(0.5)
+
+
 def sleep(t):
     time.sleep(t)
 
@@ -64,9 +73,9 @@ def verifPods(screen: Screen):
         r, g, b = pic.getpixel((screen.x_level - screen.x_start, screen.y_level - screen.y_start))
         if r == 255 and g == 97 and b == 0:
             pyautogui.press('enter')
-            print("****************************")
+            print("***********************")
             print("\tLEVELUP")
-            print("****************************")
+            print("***********************")
         else:
             print("********************************")
             print("\tINVENTAIRE PLEIN")
@@ -163,6 +172,7 @@ def collectMaps(current_map: Map, screen: Screen):
 def farming_process(maps):
     current_pos_player = getPositionStarting()
     screen = Screen([0, 364], [1917, 1817], [1022, 1544], [1006,  993])
+    _thread.start_new_thread(verifLevelUp, (screen,))
     os.system('cls' if os.name == 'nt' else 'clear')
     #CHECK MAP EXIST
     if checkMapExist(maps, current_pos_player):

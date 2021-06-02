@@ -385,7 +385,7 @@ def checkLevelup(level):
     while True:
         pic = pyautogui.screenshot(region=(screen['start'][0], screen['start'][1], screen['end'][0], screen['end'][1]))
         r, g, b = pic.getpixel(((1006 - 0), (993 - 364)))
-        if (r == 255 and g == 97 and b == 0):
+        if r == 255 and g == 97 and b == 0:
             pyautogui.press('enter')
             stats['levelup'] = stats['levelup'] + 1
             print('-----    LEVEL UP: ' + str(process['level']) + '    -----')
